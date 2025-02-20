@@ -1,0 +1,53 @@
+project:
+  type: website
+  title: "wb-quarto-template"
+
+website:
+  navbar:
+    title: false
+    logo-href: http://www.worldbank.org/
+    background: white
+    foreground: "#0071bc"
+    search: true
+    left:
+      - text: "Who we are"
+        href: https://www.worldbank.org/ext/en/who-we-are
+      - text: "What we do"
+        href: https://www.worldbank.org/en/what-we-do
+      - text: "Where we work"
+        href: https://www.worldbank.org/en/where-we-work
+      - text: "Understanding poverty"
+        href: http://www.worldbank.org/en/understanding-poverty
+      - text: "Work with us"
+        href: http://www.worldbank.org/en/work-with-us
+  page-footer:
+    background: "#000000"
+    foreground: "#808080"
+    right: "© 2025 The World Bank Group, All Rights Reserved."
+    left:
+      - text: IBRD
+        href: http://www.worldbank.org/en/who-we-are/ibrd
+      - text: IDA
+        href: http://www.worldbank.org/ida
+      - text: IFC
+        href: http://www.ifc.org/
+      - text: MIGA
+        href: http://www.miga.org/
+      - text: ICSID
+        href: http://icsid.worldbank.org/
+
+editor: visual
+
+format:
+  html:
+    page-layout: full
+    title-block-banner: "#f6f6f6"
+    title-block-banner-color: "#333333"
+    theme: style.css
+#    template-partials:
+#      - title-block.html
+
+resources:
+  - fonts/*
+  - style.css
+

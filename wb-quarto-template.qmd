@@ -1,0 +1,24 @@
+---
+title: "wb-quarto-template"
+date: 2025-02-20
+date-format: long
+author: John Doe
+---
+
+:::::: grid
+::: {.g-col-lg-2 .g-col-md-1 .g-col-sm-0 .g-col-0}
+:::
+
+::: {.g-col-lg-8 .g-col-md-10 .g-col-sm-12 .g-col-12}
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see [quarto.org](https://quarto.org).
+
+```{r}
+1 + 1
+```
+:::
+
+::: {.g-col-lg-1 .g-col-md-1 .g-col-sm-0 .g-col-0}
+:::
+::::::
