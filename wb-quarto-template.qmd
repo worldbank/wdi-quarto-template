@@ -10,19 +10,125 @@ author: John Doe
 :::
 
 ::: {.g-col-lg-8 .g-col-md-10 .g-col-sm-12 .g-col-12}
+
+::: lead
+The lead of the article is displayed in a larger font
+:::
+
 ## Quarto
 
 Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see [quarto.org](https://quarto.org).
 
+This is a table:
+
+|  |  |
+|----------------|--------------------------------------------------------|
+| **Series** | **Indicator name** |
+| SH.STA.HYGN.ZS | People with basic handwashing facilities including soap and water (% of population) |
+| SH.STA.HYGN.RU.ZS | People with basic handwashing facilities including soap and water, rural (% of rural population) |
+| SH.STA.HYGN.UR.ZS | People with basic handwashing facilities including soap and water, urban (% of urban population) |
+
+A ggplot visualization, styled with the `wbplot` package.
+
 ```{r}
-1 + 1
+#| fig-height: 12
+#| fig-dpi: 300
+#| warning: false
+#| code-summary: R code for the dumbbell chart showing the gap in rural vs urban access to handwashing facilities
+library(wbplot)
+library(dplyr)
+library(tidyr)
+library(wbstats)
+library(ggplot2)
+
+hand_dwell <- wb_data(c("SH.STA.HYGN.UR.ZS", "SH.STA.HYGN.RU.ZS"), start_date = 2022, end_date = 2022) %>% 
+  filter(!is.na(SH.STA.HYGN.UR.ZS)) %>% 
+  filter(!is.na(SH.STA.HYGN.RU.ZS)) %>% 
+  rename(urban = SH.STA.HYGN.UR.ZS, rural = SH.STA.HYGN.RU.ZS) %>% 
+  arrange(desc(rural)) %>% 
+  mutate(country = factor(country, levels = unique(country))) %>% 
+  pivot_longer(c("urban", "rural"), names_to = "Series", values_to = "Data")
+
+p6 = ggplot(hand_dwell, aes(x = Data, y = country, group = country, fill = Series)) +
+  theme_minimal() +
+  geom_line() +
+  geom_point(aes(fill = Series), size = 3, shape = 21, color = "white") +
+  theme_wb() +
+  labs(title = "Less access to handwashing facilities for rural residents",
+       subtitle = "People with basic handwashing facilities including soap and water (% of population, 2022)",
+       x = "",
+       y = "") +
+  scale_fill_wb_d(palette = "urbanisation") +
+  #scale_fill_manual(values = c("#54AE89", "#6D88D1")) +
+  coord_cartesian(expand = FALSE, clip = "off") +
+  scale_x_continuous(limits = c(0, 100), position = "top")
+  
+p6
 ```
+
 :::
 
 ::: {.g-col-lg-1 .g-col-md-1 .g-col-sm-0 .g-col-0}
 :::
 ::::::
 
+::: {.wide}
+This world tile grid map is made with Observable plot, and is wider than the text body:
+
+```{r}
+#| code-summary: R code to get the data for the world tile grid
+#| warning: false
+
+handwash.raw <- wb_data("SH.STA.HYGN.ZS", country = "countries_only", start_date = 2017, end_date = 2022)
+handwash.countries <- select(handwash.raw, iso3c, date, SH.STA.HYGN.ZS) %>%
+  #filter(!is.na(SH.STA.HYGN.ZS)) %>%
+  mutate(`Limited or No facility` = 100 - SH.STA.HYGN.ZS) %>% 
+  rename(Basic =`SH.STA.HYGN.ZS`) %>% 
+  pivot_longer(c("Basic", "Limited or No facility"), names_to = "series", values_to = "percentage")
+
+grid <- read.csv("worldtilegrid.csv")
+grid.export <- select(grid, alpha.3, y, x)
+
+handwash.countries.grid <- inner_join(handwash.countries, grid, by = c("iso3c" = "alpha.3"))
+
+ojs_define(handwashCountriesGrid = handwash.countries.grid)
+ojs_define(grid = grid)
+```
+
+```{ojs}
+//| code-summary: Plot the world tile grid map
+//| out-width: 100%
+
+colors = ["#34A7F2", "#FF9800"]
+countryCodes = Array.from(d3.union(transpose(handwashCountriesGrid).map((d) => d.iso3c)))
+fx = countryCodes.map(d => transpose(handwashCountriesGrid).find(c => c.iso3c == d).x);
+fy = countryCodes.map(d => transpose(handwashCountriesGrid).find(c => c.iso3c == d).y);
+
+Plot.plot({
+  width: 1600,
+  color: {legend: true, range: [colors[0], colors[1]]},
+  x: { axis: null},
+  y: { axis: null},
+  facet: { margin: 0, label: null },
+  fx: {padding: 0.1, interval: 1, axis: null},
+  fy: {padding: 0.1, interval: 1, axis: null},
+  marks: [
+    Plot.frame({fill: "#dddddd"}),
+    Plot.barY(transpose(handwashCountriesGrid), {
+      x: "date",
+      y: "percentage",
+      fill: "series",
+      stroke: "#ffffff",
+      strokeWidth: 1,
+      fx: "x",
+      fy: "y",
+      tip: true
+    }),
+    Plot.text(countryCodes, {fx, fy, frameAnchor: "top-left", dx: 4, dy: 4, fill: "#000000", stroke: "#ffffff"}),
+  ]
+})
+```
+:::
 
 
 ```{=html}

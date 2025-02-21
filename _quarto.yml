@@ -12,11 +12,25 @@ website:
     left:
       - text: "Who we are"
         menu:
-          - text: "Test link 1"
-            href: https://www.worldbank.org/ext/en/who-we-are
-          - text: "Test link 2"
-            href: https://www.worldbank.org/ext/en/who-we-are
-#        href: https://www.worldbank.org/ext/en/who-we-are
+          - text: "About the World Bank"
+          - text: "Overview"
+            href: http://www.worldbank.org/en/about/what-we-do
+          - text: "Organization"
+            href: http://www.worldbank.org/en/about/leadership
+          - text: "Partners"
+            href: http://www.worldbank.org/en/about/partners
+          - text: "History"
+            href: http://www.worldbank.org/en/about/history
+          - text: "World Bank Group Strategy"
+            href: https://openknowledge.worldbank.org/handle/10986/16093
+          - text: "Archives"
+            href: http://www.worldbank.org/en/about/archives
+          - text: Accountability
+          - text: Annual reports
+            href: http://www.worldbank.org/en/about/annual-report
+          - text: Access to information
+            href: http://www.worldbank.org/en/access-to-information
+
       - text: "What we do"
         href: https://www.worldbank.org/en/what-we-do
       - text: "Where we work"
@@ -42,7 +56,7 @@ website:
         href: http://icsid.worldbank.org/
 
 editor: visual
-
+code-fold: true
 format:
   html:
     page-layout: custom
