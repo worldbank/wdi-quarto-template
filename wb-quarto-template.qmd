@@ -22,3 +22,47 @@ Quarto enables you to weave together content and executable code into a finished
 ::: {.g-col-lg-1 .g-col-md-1 .g-col-sm-0 .g-col-0}
 :::
 ::::::
+
+
+
+```{=html}
+<div class="secondary-links">
+  <div class="secondary-links-container">
+      <div class="secondary-links-title">
+        <h2>Useful Resources</h2>
+      </div>
+      <div class="grid">
+        <div class="g-col-lg-4 g-col-md-4 g-col-sm-12">
+          <ul>
+            <li><a href="/world-development-indicators/stories.html">Data Stories</a></li>
+            <li><a href="/world-development-indicators/the-world-by-income-and-region.html">The world by income and region</a></li>
+            <li><a href="/world-development-indicators/wdi-and-the-sustainable-development-goals.html">Monitoring the Sustainable Development Goals</a></li>
+            <li>Atlas of SDGs 2018 (<a href="http://datatopics.worldbank.org/sdgatlas/">View online</a> | <a href="https://openknowledge.worldbank.org/handle/10986/29788">PDF</a>)</li>
+            <li>Atlas of SDGs 2017 (<a href="http://datatopics.worldbank.org/sdgatlas/archive/2017">View online</a> |<a href="https://openknowledge.worldbank.org/handle/10986/26306"> PDF</a>)</li>
+            <li><a href="http://datatopics.worldbank.org/sdgs">WDI: SDG Dashboards</a></li>
+          </ul>
+        </div>
+        <div class="g-col-lg-4 g-col-md-4 g-col-sm-12 center-left-border">
+          <ul>
+            <li><a href="/world-development-indicators/user-guide.html">User guide to WDI resources</a></li>
+            <li><a href="/world-development-indicators/sources-and-methods.html">Sources and methods</a></li>
+            <li><a href="https://data.worldbank.org/country">Country</a> and <a href="https://data.worldbank.org/indicator">Indicator</a> pages</li>
+            <li><a href="http://databank.worldbank.org/wdi">Query and analyze data in DataBank</a></li>
+            <li><a href="https://data.worldbank.org/data-catalog/world-development-indicators">Bulk downloads of WDI</a> (<a href="http://databank.worldbank.org/data/download/WDI_excel.zip">Excel</a> | <a href="http://databank.worldbank.org/data/download/WDI_csv.zip">CSV</a>)</li>
+            <li><a href="https://datahelpdesk.worldbank.org/knowledgebase/articles/889386">API Documentation</a></li>
+          </ul>
+        </div>
+        <div class="g-col-lg-4 g-col-md-4 g-col-sm-12 center-left-border">
+          <ul>
+            <li><a href="http://wdi.worldbank.org/tables">Statistical Tables</a></li>
+            <li><a href="/world-development-indicators/world-development-indicators-reports.html">WDI reports</a></li>
+            <li><a href="/world-development-indicators/wdi-archives.html">WDI Archives</a></li>
+            <li><a href="/world-development-indicators/partners.html">Partners</a></li>
+            <li><a href="/world-development-indicators/about-world-development-indicators.html">About</a></li>
+            <li><a href="mailto:data@worldbank.org?Subject=WDI%20Website%20Query" target="_top">Contact us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</div>
+```

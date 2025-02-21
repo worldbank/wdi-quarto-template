@@ -11,7 +11,12 @@ website:
     search: true
     left:
       - text: "Who we are"
-        href: https://www.worldbank.org/ext/en/who-we-are
+        menu:
+          - text: "Test link 1"
+            href: https://www.worldbank.org/ext/en/who-we-are
+          - text: "Test link 2"
+            href: https://www.worldbank.org/ext/en/who-we-are
+#        href: https://www.worldbank.org/ext/en/who-we-are
       - text: "What we do"
         href: https://www.worldbank.org/en/what-we-do
       - text: "Where we work"
@@ -40,7 +45,7 @@ editor: visual
 
 format:
   html:
-    page-layout: full
+    page-layout: custom
     title-block-banner: "#f6f6f6"
     title-block-banner-color: "#333333"
     theme: style.css

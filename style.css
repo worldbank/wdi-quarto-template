@@ -26,6 +26,16 @@
   max-width: 1192px;
 }
 
+.quarto-title.column-body, .quarto-title-meta {
+  max-width: 1192px;
+  margin: auto;
+}
+
+.grid {
+  max-width: 1192px;
+  margin: auto;
+}
+
 .navbar-nav {
   margin: auto;
 }
@@ -40,6 +50,44 @@ img.navbar-logo {
 
 svg.aa-SubmitIcon {
   fill: #EC553A;
+}
+
+.secondary-links {
+  background-color: #0071bc;
+  color: white;
+  position: relative;
+  bottom: -88px;
+  padding-bottom: 12px;
+}
+
+.secondary-links-container {
+  max-width: 1160px;
+  margin: auto;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.secondary-links-title h2 {
+  font-family: Andes;
+}
+
+.secondary-links ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.secondary-links ul li {
+  font-size: 16px;
+}
+
+.secondary-links ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.center-left-border {
+  border-left: 1px solid white;
+  padding-left: 1em;
 }
 
 footer {
