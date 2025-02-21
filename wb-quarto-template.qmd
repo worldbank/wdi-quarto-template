@@ -1,5 +1,5 @@
 ---
-title: "wb-quarto-template"
+title: "WDI Topic Note template"
 date: 2025-02-20
 date-format: long
 author: John Doe
